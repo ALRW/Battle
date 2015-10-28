@@ -3,7 +3,7 @@ describe 'can go to index page' do
     visit('/')
     fill_in('player1', with: 'Andrew')
     fill_in('player2', with: 'Mahmud')
-    click_button('submit-button')
+    click_button('Submit')
     expect(page).to have_content "Andrew vs Mahmud"
   end
 end
