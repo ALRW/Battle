@@ -1,5 +1,6 @@
 require 'sinatra/base'
 require './lib/player'
+require './lib/game'
 
 class Battle < Sinatra::Base
   enable :sessions
@@ -23,7 +24,7 @@ class Battle < Sinatra::Base
   get '/attack_confirmation' do
     @player1 = $player1
     @player2 = $player2
-    $player2.reduce_health
+    Game.new.attack(@player2)
     erb(:attack_confirmation)
   end
 
